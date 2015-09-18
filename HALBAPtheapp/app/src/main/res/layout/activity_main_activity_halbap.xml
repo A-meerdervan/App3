@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivityHALBAP"
+    android:background="@drawable/bladeren">
+    <!--android:background="#faf7ff">-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/HangMan"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/hangman6"
+            android:layout_alignParentTop="true" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letters already used:"
+                android:id="@+id/PassiveUsedLettersText"
+                android:layout_gravity="left|center_horizontal"
+                android:textColor="#050505"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/UsedLetters"
+                android:id="@+id/ActiveUsedLetters"
+                android:textColor="#050505"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/ShowTheWord"
+                android:id="@+id/WordStatus"
+                android:nestedScrollingEnabled="false"
+                android:gravity="center_vertical|center_horizontal" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:id="@+id/linLayout2"
+        android:layout_below="@+id/linearLayout">
+
+        <EditText
+            android:hint="@string/UserInputHint"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/UserInput"
+            android:textColor="#010101"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guess"
+            android:id="@+id/button2"
+            android:onClick="quessWasEntered"
+            android:background="#83ff0d00" />
+    </LinearLayout>
+<!--Image source: https://www.google.nl/search?q=restart&source=lnms&tbm=isch&sa=X&ved=0CAcQ_AUoAWoVChMIloXpyI7sxwIVAe8UCh0GVAdH&biw=1366&bih=643#imgrc=a0Crr3htQGb55M%3A-->
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/ReplayButton"
+        android:src="@drawable/restart"
+        android:background="@android:color/transparent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:onClick="restartGame"
+        android:layout_below="@+id/linLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
